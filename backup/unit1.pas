@@ -5,8 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ExtCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics,
+  Dialogs, StdCtrls, Menus, ExtCtrls, Game;
 
 type
 
@@ -37,6 +37,15 @@ type
     constructor Create(Brief, Detail: UTF8String);
   end;
 
+  { TStringIntMap }
+  TStringIntMap = specialize TFPGMap<string, Integer>;
+
+  { TStringBoolMap }
+  TStringBoolMap = specialize TFPGMap<string, Boolean>;
+
+  { TStringBoolMap }
+  TStringRealMap = specialize TFPGMap<string, Real>;
+
 var
   Form1: TForm1;
 
@@ -60,7 +69,7 @@ end;
 
 procedure TForm1.ListBox1SelectionChange(Sender: TObject; User: boolean);
 begin
-  Memo1.Text := ListBox1.Items.Objects[ListBox1.ItemIndex];
+  Memo1.Text := UTF8String(ListBox1.Items.Objects[ListBox1.ItemIndex]);
 end;
 
 procedure TForm1.AddGameLog(Brief, Detail: UTF8String);

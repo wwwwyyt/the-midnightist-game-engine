@@ -48,6 +48,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="DataModule"/>
       </Unit>
+      <Unit>
+        <Filename Value="game.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Game"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
