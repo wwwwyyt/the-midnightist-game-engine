@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import sys, os
+from PIL import Image
+
+d = sys.argv[1]
+w, h = 320, 240
+
+for f in os.listdir(d):
+    p = os.path.join(d, f)
+    if f.lower().endswith(('.png', '.jpg')):
+        img = Image.open(p)
+        img.resize((w, h), Image.NEAREST).save(p)
+        print(f"Resized: {f}")
